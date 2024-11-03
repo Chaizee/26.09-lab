@@ -48,4 +48,33 @@ class Program {
 }
 
 //Необходимо определить два максимума
-    
+
+using System.ComponentModel.DataAnnotations;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int n = int.Parse(Console.ReadLine());
+        int max1 = int.MinValue;
+        int max2 = int.MinValue;
+        for (int i = 1; i < n; i++)
+        {
+            int number = int.Parse(Console.ReadLine());
+
+            if (number > max1)
+            {
+                max2 = max1;
+                max1 = number;
+            }
+            else if (number > max2)
+            {
+                max2 = number;
+            }
+        }
+        Console.WriteLine("Первый максимум: " + max1);
+        Console.WriteLine("Второй максимум: " + max2);
+    }
+
+}
